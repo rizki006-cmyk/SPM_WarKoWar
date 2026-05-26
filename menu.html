@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menu WarKoWar</title>
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <section class="menu-page">
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <h1 class="logo">
+        <span class="k1">War</span>
+          
+          <div class="sub-logo">
+            <span class="k2">Ko</span>
+            <span class="k3">WAR</span>
+          </div>
+      </h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+
+        <li>
+          <a href="https://maps.app.goo.gl/8xpY4S37vdeN1PRk8"
+             target="_blank">
+             Lokasi
+          </a>
+        </li>
+
+        <li>
+          <a href="https://wa.me/62857123456789"
+             target="_blank">
+             Pesan
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- MENU -->
+    <div class="menu-container">
+
+      <div class="menu-box">
+        <h2><img src= "./logo kopi.png" class="icon" alt="Minuman"> Minuman</h2>
+
+        <div class="item">
+            <p>Kopi Inspirasi</p>
+            <span>20K</span>
+        </div>
+
+        <div class="item">
+            <p>Dalgona Matcha</p>
+            <span>27K</span>
+        </div>
+
+        <div class="item">
+            <p>Kopi Pandan</p>
+            <span>22K</span>
+        </div>
+
+        <div class="item">
+            <p>Kopi Tubruk Kuy</p>
+            <span>25K</span>
+        </div>
+
+        <div class="item">
+            <p>Coklat Hangat</p>
+            <span>17K</span>
+        </div>
+
+        <div class="item">
+            <p>Lemon Tea</p>
+            <span>15K</span>
+        </div>
+      </div>
+
+      <div class="menu-box">
+        <h2><img src="cookies-orange.png" class="icon" alt="Snack"> Snack</h2>
+
+        <div class="item">
+            <p>Pisang Goreng Keju</p>
+            <span>15K</span>
+        </div>
+
+        <div class="item">
+            <p>Roti Bakar Coklat Keju</p>
+            <span>15K</span>
+        </div>
+
+        <div class="item">
+            <p>Cireng Rujak</p>
+            <span>10K</span>
+        </div>
+
+        <div class="item">
+            <p>Pisang Crispy</p>
+            <span>12K</span>
+        </div>
+
+        <div class="item">
+            <p>Roti Kering</p>
+            <span>7K</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- INFO -->
+    <div class="info">
+      <p><img src="lokasi-putih.png" class="icon" alt="Lokasi"> Jl. Mabes Polri  No.5 Bantalempuk, Bogor Timur</p>
+      <p><img src="telp-putih.png" class="icon" alt="Telepon"> 0857 1234 56789</p>
+      <p><img src="logo jam-putih.png" class="icon" alt="Jam"> Selasa - Minggu Buka: 08.00 - 21.00</p>
+    </div>
+
+  </section>
+
+  <script>
+    // NAVBAR SCROLL EFFECT
+window.addEventListener("scroll", function () {
+  const navbar = document.querySelector(".navbar");
+
+  if (navbar) {
+    navbar.classList.toggle("active", window.scrollY > 50);
+  }
+});
+
+// SMOOTH SCROLL
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
+
+    const target = document.querySelector(this.getAttribute("href"));
+
+    if (target) {
+      e.preventDefault();
+
+      target.scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+  });
+});
+
+// ANIMASI HERO CONTENT
+window.addEventListener("load", () => {
+  const hero = document.querySelector(".hero-content");
+
+  if (hero) {
+    hero.style.opacity = "1";
+    hero.style.transform = "translateY(0)";
+  }
+});
+
+// ALERT WHATSAPP
+const pesanBtn = document.querySelector('a[href*="https://wa.me/62857123456789"]');
+
+if (pesanBtn) {
+  pesanBtn.addEventListener("click", () => {
+    alert("Kamu akan diarahkan ke WhatsApp untuk memesan ☕");
+  });
+}
+
+// ALERT GOOGLE MAPS
+const LokasiBttn = document.querySelector('a[href*="https://maps.app.goo.gl/8xpY4S37vdeN1PRk8"]');
+
+if (LokasiBttn) {
+  LokasiBttn.addEventListener("click", () => {
+    alert("Kamu akan diarahkan ke Google Maps untuk melihat lokasi kami 📍");
+  });
+}
+  </script>
+</body>
+</html>
